@@ -6,7 +6,7 @@ connectToMongo()
 
 
 const app = express()
-const port = 3000
+const port = 5000
 
 app.use(express.json())
 
@@ -15,6 +15,7 @@ app.use(express.json())
 // })
 
 // Available Routes
+// App.use is a middleware that you can handle all requests and pass to the corresponding router
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/notes',require('./routes/notes'))
 

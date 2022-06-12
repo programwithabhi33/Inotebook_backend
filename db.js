@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 // Your locally database url that you can use to connect the database
-const mongoURI = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false'
+const mongoURI = 'mongodb://localhost:27017/inotebook'
 
 
 const connectToMongo=()=>{

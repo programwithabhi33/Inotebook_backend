@@ -3,6 +3,11 @@ const { Schema } = mongoose;
 
 // Defining the notes schema
 const notesSchema = new Schema({
+    // Adding the foreign key(concept in sql database) for linking corresponding user to their notes
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"user"
+    },
     title: {
         type: String,
         required: true,

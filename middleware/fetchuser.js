@@ -18,7 +18,7 @@ const fetchuser = (req, res, next) => {
         // Adding the decoded user id from the json web token to the req.user Note: user is a object that we created when the user first sign up
         req.user = data.user
         // Calling the next function means after the fetchuser function will run
-        next()
+        next() 
     }
     catch (error) {
         res.status(401).send({ error: "Access Denied Please authenticate using the valid token" })

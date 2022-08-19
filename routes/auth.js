@@ -9,6 +9,8 @@ const fetchuser = require("../middleware/fetchuser")
 
 const jwtSecret = "Abhishekisagoodprogr@ammer"
 
+let success = false;
+
 // Route 1:Creating the user using post request no login required
 router.post('/createuser', [
   body('name', 'Name value shoud be at least 3 characters').isLength({ min: 3 }),
@@ -57,7 +59,8 @@ router.post('/createuser', [
 
     // Creating JsonWebToken with jwt.sign method
     const authToken = jwt.sign(data, secretData);
-    res.json({ authToken })
+    success = true;
+    res.json({ success,authToken })
   }
   catch (err) {
     console.log(err.message)
@@ -109,7 +112,8 @@ router.post('/login', [
 
     // Creating JsonWebToken with jwt.sign method
     const authToken = jwt.sign(data, secretData);
-    res.json({ authToken })
+    success = true;
+    res.json({ authToken,success})
 
   }
 

@@ -23,7 +23,7 @@ app.use(express.json())
 app.get('/',(req,res)=>{
   res.send("You are on the / welcome")
 })
-app.use('/api/auth',require('./routes/auth'))
+app.use('/api',require('./routes/auth'))
 app.use('/api/notes',require('./routes/notes'))
 
 app.listen(port, hostname, () => {
